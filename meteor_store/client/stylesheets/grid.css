@@ -1,0 +1,148 @@
+/* DEFAULTS
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body { padding: 0; }
+
+/*
+div:active { outline: 1px dashed red; outline-offset: -1px; }
+*/
+
+/* GRID
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+section {
+    padding: 0 6%;
+    margin: 0;
+    position: relative;
+    float: left;
+    width: 100%;
+    clear: both;
+}
+
+.wrapper,
+.container {
+    width: 100%;
+    margin: 0 auto;
+    max-width: 1800px;
+}
+
+.row { clear: both; display: block; }
+
+/* ALL COLUMNS */
+
+[class*="desk-"],
+[class*="tab-"] {
+    display: block;
+    float:left;
+    padding: 0 1% 2%;
+    margin: 0;
+}
+
+[class*="desk-"]:first-child,
+[class*="tab-"]:first-child { margin-left: 0; }
+
+
+/*  GROUPING  */
+.row:before,
+.row:after {
+    content:"";
+    display:table;
+}
+.row:after {
+    clear:both;
+}
+.row {
+    zoom:1; /* For IE 6/7 */
+}
+
+/* CONTENT ~ use  */
+.content {
+    background: red;
+    display: block;
+    height: 100%;
+    line-height: 22vh;
+    opacity: 0.3;
+    color: #FFF;
+}
+
+/*  GRID OF EIGHT  */
+
+.desk-01 { width: 12.5%; }
+.desk-02 { width: 25%; }
+.desk-03 { width: 37.5%; }
+.desk-04 { width: 50%; }
+.desk-05 { width: 62.5%; }
+.desk-06 { width: 75%; }
+.desk-07 { width: 87.5%; }
+.desk-08 { width: 100%; }
+
+.desk-hide { display: none; }
+
+/*  GO TO 4 COLUMNS AT LESS THAN 1100 PIXELS */
+
+@media (min-width: 650px) and (max-width: 1099px) {
+
+    /*
+    body { padding: 3.75% 0;}
+    */
+    body { padding: 0;}
+
+    section { padding: 0 3.75%; }
+
+    .tab-01 { width: 12.5%; }
+    .tab-02 { width: 25%; }
+    .tab-03 { width: 37.5%; }
+    .tab-04 { width: 50%; }
+    .tab-05 { width: 62.5%; }
+    .tab-06 { width: 75%; }
+    .tab-07 { width: 87.5%; }
+    .tab-08 { width: 100%; }
+
+
+    .tab-nudge-02 { margin-left: 25%; }
+
+
+    [class*="desk-"],
+    [class*="tab-"],
+    [class*="mob-"] { padding: 0 1.5% 3%; display: block; }
+
+    .tab-hide { display: none; }
+
+}
+
+/*  GO 1 COLUMN AT LESS THAN 650 PIXELS */
+
+@media only screen and (max-width: 649px) {
+
+    section { padding: 0 15px; }
+
+    [class*="desk-"],
+    [class*="tab-"],
+    [class*="mob-"] { width: 100%; padding: 1.25% 0; display: block; }
+
+    .mob-04 { width: 50%; }
+    .mob-02 { width: 25%; }
+    .mob-06 { width: 75%; }
+
+    .mob-hide { display: none; }
+
+}
+
+/* NESTED */
+
+[class*="desk-"] [class*="desk-"],
+[class*="tab-"] [class*="tab-"],
+[class*="top-"] [class*="top-"] { padding: 0; }
