@@ -1,3 +1,3 @@
 # meteor_store
-meteore store app
+meteor store app
 
