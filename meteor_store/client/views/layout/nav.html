@@ -1,0 +1,37 @@
+<template name="nav">
+    <section class="top navigation scroll">
+        <div class="container">
+            <div class="row">
+                <div class="desk-hide tab-02 mob-04 yes-logo">
+                    <a href="#">Yes</a>
+                </div>
+                <button class="nav-toggle" id="mobile-off">Yes</button>
+                <button class="nav-toggle" id="mobile-on">Yes</button>
+                <div class="mobile-nav-bag">
+                    <a class="cart-link">
+                        Bag
+                        <div id="md-main-cart-total" class="nought"></div>
+                    </a>
+                </div>
+                <div class="desk-08 tab-06 mob-08 nav-wrap">
+                    <div class="desk-04 tab-04 mob-08 nav-right">
+                        <ul>
+                            <li><a class="open-login">Sign In</a></li>
+                            <li>
+                                <a class="cart-link">
+                                    Bag
+                                    <div id="md-main-cart-total" class="nought"></div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="desk-04 tab-04 mob-08 nav-main">
+                        <ul id="menu-yes" class="menu">
+                            <li><a href="{{pathFor 'products'}}" title="Products">Products</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</template>

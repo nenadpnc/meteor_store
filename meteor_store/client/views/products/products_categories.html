@@ -1,0 +1,18 @@
+<template name="productsCategories">
+    <section class="products-nav navigation">
+        <div class="container">
+            <div class="row">
+                <div class="desk-08 tab-08 mob-hide prod-nav">
+                    <h2>Product</h2>
+                    <div>
+                        <ul class="products-nav-list">
+                            {{#each categories}}
+                              {{> category}}
+                            {{/each}}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</template>
