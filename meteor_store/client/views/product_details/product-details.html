@@ -1,0 +1,51 @@
+<template name="productDetails">
+    <section class="main-details">
+        <div class="container">
+            <div class="row">
+                <div class="desk-08 tab-08 details">
+                    <div class="desk-06 tab-08 right"></div>
+                    <div class="desk-02 tab-08 left">
+                        <div class="row no-border">
+                            <div class="desk-08">
+                                <h4 class="no-padding">{{name}}</h4>
+                            </div>
+                        </div>
+                        <div class="row no-border">
+                            <div class="desk-08 cl-grey">
+                                <h4>{{manufacturer}}</h4>
+                            </div>
+                        </div>
+                        <div class="row price cl-black mt-60">
+                            <h4>${{currentSize.price}}</h4>
+                        </div>
+                        <div class="row">
+                            <div class="desk-08 desc">
+                                <div class="cl-black">Description</div>
+                                <p class="cl-grey">{{description}}</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <span class="left">Size</span>
+                            <select id="size" class="right">
+                                {{#each sizes}}
+                                    <option value="{{id}}">{{name}}</option>
+                                {{/each}}
+                            </select>
+                        </div>
+                        <div class="row">
+                            <span class="left">Year</span>
+                            <span class="right">{{year}}</span>
+                        </div>
+                        <div class="row">
+                            <span class="left">Materials</span>
+                            <span class="right">{{currentSize.materials}}</span>
+                        </div>
+                        <div class="row no-border align-center mt-20">
+                            <a id="addToBag" class="btn-cart">Add to bag</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</template>

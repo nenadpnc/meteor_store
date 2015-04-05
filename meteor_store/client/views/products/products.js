@@ -9,3 +9,9 @@ Template.productsGrid.helpers({
         return Products.find();
     }
 });
+
+Template.product.helpers({
+    productPrice: function(){
+        return this.sizes[0].price.toFixed(2);
+    }
+});

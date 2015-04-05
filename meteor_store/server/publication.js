@@ -5,3 +5,8 @@ Meteor.publish('categories', function(){
 Meteor.publish('products', function(){
     return Products.find();
 });
+
+Meteor.publish('singleProduct', function(id){
+    /*check(id, String);*/
+    return Products.find(id);
+});
