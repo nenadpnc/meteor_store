@@ -3,3 +3,9 @@ Template.productsCategories.helpers({
         return Categories.find();
     }
 });
+
+Template.productsGrid.helpers({
+    products: function(){
+        return Products.find();
+    }
+});

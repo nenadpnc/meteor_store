@@ -16,7 +16,7 @@
                 <div class="desk-08 tab-06 mob-08 nav-wrap">
                     <div class="desk-04 tab-04 mob-08 nav-right">
                         <ul>
-                            <li><a class="open-login">Sign In</a></li>
+                            <li>{{> loginButtons}}</li>
                             <li>
                                 <a class="cart-link">
                                     Bag
@@ -28,6 +28,7 @@
                     <div class="desk-04 tab-04 mob-08 nav-main">
                         <ul id="menu-yes" class="menu">
                             <li><a href="{{pathFor 'products'}}" title="Products">Products</a></li>
+                            <li><a href="{{pathFor 'about'}}" title="About">About</a></li>
                         </ul>
                     </div>
                 </div>
