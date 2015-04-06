@@ -250,7 +250,7 @@ a#products-link { text-decoration: none !important; }
 @media (min-width: 650px) {
 
     .navigation .nav-main ul { padding-bottom: 0; }
-    .navigation ul li a { line-height: 51px; height: 50px; }
+    .navigation ul li a { line-height: 51px; }
 
     .navigation ul li#menu-item-99,
     .navigation ul li#menu-item-605 { border-top: 0; }
@@ -625,4 +625,13 @@ a.md-top-product-category-link.current-menu-item { color: #1E1E1C !important; }
 .btn-cart:hover{
     color: #e1e1e1;
     background-color: #343432;
+}
+
+#login-dropdown-list{
+    top: 45px;
+    left: -175px;
+}
+
+#login-buttons a, .accounts-dialog a{
+    text-decoration: none;
 }

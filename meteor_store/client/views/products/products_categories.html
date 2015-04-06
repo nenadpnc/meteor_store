@@ -6,6 +6,11 @@
                     <h2>Product</h2>
                     <div>
                         <ul class="products-nav-list">
+                            <li>
+                                <a id="all" class="shop-cat-link">All
+                                    <span class="md-top-product-category-count"><span>{{allProductsCount}}</span></span>
+                                </a>
+                            </li>
                             {{#each categories}}
                               {{> category}}
                             {{/each}}

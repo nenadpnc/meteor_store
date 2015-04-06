@@ -1,29 +1,28 @@
 var categories = [
     {
         name: 'Office',
-        productsCount: 27
+        productsCount: 0
     },
     {
         name: 'Books & magazines',
-        productsCount: 40
+        productsCount: 0
     },
     {
         name: 'Home',
-        productsCount: 48
+        productsCount: 0
     },
     {
         name: 'Children',
-        productsCount: 23
+        productsCount: 0
     },
     {
         name: 'Outdoor',
-        productsCount: 10
+        productsCount: 0
     }
 ];
 
-function randomIntFromInterval(min,max)
-{
-    return Math.floor(Math.random()*(max-min+1)+min);
+function randomIntFromInterval(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
 var thumbsArray = [
@@ -43,13 +42,23 @@ var thumbsArray = [
 
 var categoryArray = ['Home', 'Office', 'Children', 'Books & magazines', 'Outdoor'];
 
+if (Categories.find().count() === 0) {
+    for (var i = 0; i < categories.length; i++) {
+        Categories.insert({
+            name: categories[i].name,
+            productsCount: categories[i].productsCount
+        });
+    }
+}
+
 if (Products.find().count() === 0) {
     for (var j = 0; j < 50; j++) {
+        var category = Fake.fromArray(categoryArray);
         Products.insert({
             name: Fake.word(),
             manufacturer: Fake.word(),
             thumbSrc: Fake.fromArray(thumbsArray),
-            category: Fake.fromArray(categoryArray),
+            category: category,
             description: Fake.paragraph(3),
             sizes: [
                 { name: 'Small', inStock: randomIntFromInterval(1, 25), price: randomIntFromInterval(15, 25), materials: 'H:2.12" x W: 5.66" x D: 5.66"'},
@@ -60,14 +69,7 @@ if (Products.find().count() === 0) {
             year: Fake.fromArray(['2010', '2011', '2012', '2013', '2014']),
             images: []
         });
-    }
-}
 
-if (Categories.find().count() === 0) {
-    for (var i = 0; i < categories.length; i++) {
-        Categories.insert({
-            name: categories[i].name,
-            productsCount: categories[i].productsCount
-        });
+        Categories.update({ name: category }, {$inc: {productsCount: 1}});
     }
 }
