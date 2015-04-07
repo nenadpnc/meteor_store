@@ -148,8 +148,7 @@ section {
 [class*="top-"] [class*="top-"] { padding: 0; }
 
 .product-grid .product-surround{
-    height: 400px;
-    margin-bottom: 20px;
+    height: 360px;
     padding: 1%;
     color: #8A8A8A;
 }
