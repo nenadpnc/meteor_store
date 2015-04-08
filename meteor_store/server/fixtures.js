@@ -28,7 +28,7 @@ function randomIntFromInterval(min, max) {
 var thumbsArray = [
     'images/thumbs/yes_dtldysi-443x500-430x480.jpg',
     'images/thumbs/yes_thumbs_aalto_vase-430x480.jpg',
-    'images/thumbs/yes_thumbs_black_bowl-443x500-430x4800.jpg',
+    'images/thumbs/yes_thumbs_black_bowl-443x500-430x480.jpg',
     'images/thumbs/yes_thumbs_helvetica_book-430x480.jpg',
     'images/thumbs/yes_thumbs_sphrical_vase-430x480.jpg',
     'images/thumbs/yes_thumbs_blockitecture-430x480.jpg',
@@ -52,7 +52,7 @@ if (Categories.find().count() === 0) {
 }
 
 if (Products.find().count() === 0) {
-    for (var j = 0; j < 50; j++) {
+    for (var j = 0; j < 250; j++) {
         var category = Fake.fromArray(categoryArray);
         Products.insert({
             name: Fake.word(),
