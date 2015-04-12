@@ -19,3 +19,15 @@ Template.productDetails.created = function () {
 
     this.currentSize = new ReactiveVar(this.data.sizes[0]);
 };
+
+Template.productDetails.rendered = function(){
+    $("#productSlider").owlCarousel({
+        slideSpeed : 300,
+        paginationSpeed : 400,
+        items : 1,
+        itemsDesktop : false,
+        itemsDesktopSmall : false,
+        itemsTablet: false,
+        itemsMobile : false
+    });
+};

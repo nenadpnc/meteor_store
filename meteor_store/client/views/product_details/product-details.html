@@ -3,7 +3,13 @@
         <div class="container">
             <div class="row">
                 <div class="desk-08 tab-08 details">
-                    <div class="desk-06 tab-08 right"></div>
+                    <div class="desk-06 tab-08 right">
+                        <div id="productSlider" class="owl-carousel owl-theme">
+                            {{#each images}}
+                                <div class="item"><img src="{{this}}"></div>
+                            {{/each}}
+                        </div>
+                    </div>
                     <div class="desk-02 tab-08 left">
                         <div class="row no-border">
                             <div class="desk-08">

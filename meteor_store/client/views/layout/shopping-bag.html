@@ -1,0 +1,56 @@
+<template name="shoppingBag">
+    <div id="menu" class="panel">
+        <a id="bag-close" class="closer right">Close</a>
+
+        <div class="cart-items">
+            <div class="slide-cart-number-of-items-header">
+                <div class="row"></div>
+            </div>
+            <div class="single-product-row row">
+                <div class="desk-01 md-single-product-slide-cart-image">
+                    <a href="#">
+                        <img style="min-width: 61px" src="http://www.itsjustyes.com/six/wp-content/uploads/2014/11/yes_031_analog_alarm_clock_1-75x75.jpg">
+                    </a>
+                </div>
+                <div class="desk-07 pl-20">
+                    <div class="row">
+                        <div class="desk-05">
+                            <a href="#">Analog Travel Alarm Clock</a>
+                        </div>
+                        <div class="desk-02"></div>
+                        <div class="desk-01 slide-cart-line-remove"></div>
+                    </div>
+                    <div class="row">
+                        <div class="desk-06 qty-wrap">
+                            <span class="slide-cart-quantity-label">QTY</span>
+                            <a class="alter-line-amount alter-line-amount-decrease"></a>
+                            <span class="single-product-line-qty">1</span>
+                            <a class="alter-line-amount alter-line-amount-increase"></a>
+                        </div>
+                        <div class="desk-02 slide-cart-line-price">
+                            <span>$40.00</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" id="slide-cart-subtotal-container">
+                <div class="desk-06">
+                    Subtotal
+                    <span>Excluding TAX & Shipping</span>
+                </div>
+                <div class="desk-02" id="slide-cart-subtotal">
+                    <span>$40.00</span>
+                </div>
+            </div>
+            <div class="row" id="slide-cart-buttons-container">
+                <div class="desk-04" id="slide-cart-hide-cart-button">
+                    <a class="slide-closer">Continue shopping</a>
+                </div>
+                <div class="desk-04 align-center" id="slide-cart-checkout-button">
+                    <a class="review-order">Checkout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="overlay"></div>
+</template>

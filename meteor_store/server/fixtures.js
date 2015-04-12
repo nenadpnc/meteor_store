@@ -21,10 +21,6 @@ var categories = [
     }
 ];
 
-function randomIntFromInterval(min, max) {
-    return Math.floor(Math.random() * (max - min + 1) + min);
-}
-
 var thumbsArray = [
     'images/thumbs/yes_dtldysi-443x500-430x480.jpg',
     'images/thumbs/yes_thumbs_aalto_vase-430x480.jpg',
@@ -40,7 +36,35 @@ var thumbsArray = [
     'images/thumbs/yes_thumbs_analog_alarm_clock-430x480.jpg'
 ];
 
-var categoryArray = ['Home', 'Office', 'Children', 'Books & magazines', 'Outdoor'];
+var imagesArray = [
+    [
+        '/images/slider/yes_119_black_small_bowl_2-1800x1056-1340x785.jpg',
+        '/images/slider/yes_127_black_bowl_xl_1-1800x1056-1340x785.jpg',
+        '/images/slider/yes_127_black_small_plate_2-1800x1056-1340x785.jpg'
+    ],
+    [
+        '/images/slider/yes_042_blockitecture_1-1340x785.jpg',
+        '/images/slider/yes_042_blockitecture_2-1340x785.jpg'
+    ],
+    [
+        '/images/slider/yes_088_boskee_cube_1-1340x785.jpg',
+        '/images/slider/yes_088_boskee_cube_2-1340x785.jpg',
+        '/images/slider/yes_088_boskee_cube_3-1340x785.jpg'
+    ],
+    [
+        '/images/slider/yes_031_analog_alarm_clock_1-1340x785.jpg',
+        '/images/slider/yes_031_analog_alarm_clock_2-1340x785.jpg',
+        '/images/slider/yes_031_analog_alarm_clock_3-1340x785.jpg'
+    ]
+];
+
+var categoryArray = [
+    'Home',
+    'Office',
+    'Children',
+    'Books & magazines',
+    'Outdoor'
+];
 
 if (Categories.find().count() === 0) {
     for (var i = 0; i < categories.length; i++) {
@@ -67,9 +91,13 @@ if (Products.find().count() === 0) {
                 { name: 'Extra Small', inStock: randomIntFromInterval(1, 25), price: randomIntFromInterval(5, 15), materials: 'H:2.87" x W: 3.33" x D: 3.33"'}
             ],
             year: Fake.fromArray(['2010', '2011', '2012', '2013', '2014']),
-            images: []
+            images: Fake.fromArray(imagesArray)
         });
 
         Categories.update({ name: category }, {$inc: {productsCount: 1}});
     }
+}
+
+function randomIntFromInterval(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) + min);
 }
