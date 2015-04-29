@@ -1,3 +1,6 @@
+/* global Fake */
+/* global Products */
+/* global Categories */
 var categories = [
     {
         name: 'Office',
