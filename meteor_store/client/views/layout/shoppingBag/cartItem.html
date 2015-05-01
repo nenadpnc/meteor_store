@@ -1,0 +1,31 @@
+<template name="cartItem">
+  {{#each cartItems}}
+      <div class="single-product-row row">
+          <div class="desk-08">
+              <div class="row p-top-bottom">
+                  <div class="desk-05">
+                      <a href="/product/{{id}}">{{name}}</a>
+                  </div>
+                  <div class="desk-02"></div>
+                  <div class="desk-01 slide-cart-line-remove"></div>
+              </div>
+              <div class="row">
+                  <div class="desk-06 qty-wrap">
+                      <span class="slide-cart-quantity-label">QTY</span>
+                      <a class="alter-line-amount alter-line-amount-decrease"></a>
+                      <span class="single-product-line-qty">{{quantity}}</span>
+                      <a class="alter-line-amount alter-line-amount-increase"></a>
+                  </div>
+                  <div class="desk-02 slide-cart-line-price">
+                      <span>${{size.price}}</span>
+                  </div>
+                  <div class="row">
+                      <div class="desk-08">
+                          <span class="slide-cart-quantity-label text-small">Size: <strong>{{size.name}}</strong></span>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  {{/each}}
+</template>

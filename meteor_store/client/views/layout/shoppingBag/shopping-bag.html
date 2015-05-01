@@ -1,0 +1,26 @@
+<template name="shoppingBag">
+    <div id="menu" class="panel">
+        <a class="closer right bag-close">Close</a>
+        <div class="cart-items">
+            {{> cartItem}}
+            <div class="row" id="slide-cart-subtotal-container">
+                <div class="desk-06">
+                    Subtotal
+                    <span>Excluding TAX & Shipping</span>
+                </div>
+                <div class="desk-02" id="slide-cart-subtotal">
+                    <span>${{subtotal}}</span>
+                </div>
+            </div>
+            <div class="row" id="slide-cart-buttons-container">
+                <div class="desk-04" id="slide-cart-hide-cart-button">
+                    <a class="slide-closer bag-close">Continue shopping</a>
+                </div>
+                <div class="desk-04 align-center" id="slide-cart-checkout-button">
+                    <a class="review-order">Checkout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="overlay"></div>
+</template>
