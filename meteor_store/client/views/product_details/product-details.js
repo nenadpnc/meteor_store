@@ -15,7 +15,8 @@ Template.productDetails.events({
             id: template.data._id,
             name: template.data.name,
             quantity: 1,
-            size: template.currentSize.get()
+            size: template.currentSize.get(),
+            thumbSrc: template.data.thumbSrc
         };
 
         var match = false;
@@ -29,7 +30,7 @@ Template.productDetails.events({
         if (!match) {
             productsInBag.push(product);
         }
-
+        Session.set('showBag', true);
         Session.set('productsInBag', productsInBag);
     }
 });

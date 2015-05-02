@@ -23,6 +23,27 @@ Router.route('/product/:_id', {
     }
 });
 
-Router.route('/about', function () {
-    this.render('about');
+Router.route('/product-index', {
+    name: 'productIndex',
+    waitOn: function () {
+        return Meteor.subscribe('products');
+    }
 });
+
+Router.route('/checkout', {
+    name: 'checkout'
+});
+
+var requireLogin = function() {
+    if (! Meteor.user() || !Session.get('productsInBag')) {
+        if(Meteor.loggingIn()){
+            this.render('loading');
+        }else{
+            this.render('accessDenied');
+        }
+    }else{
+        this.next();
+    }
+};
+
+Router.before(requireLogin, {only: 'checkout'});

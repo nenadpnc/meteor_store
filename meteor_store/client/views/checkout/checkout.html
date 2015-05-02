@@ -1,0 +1,102 @@
+<template name="checkout">
+    <section>
+        <div class="row">
+            <div class="desk-03 tab-08 cart-left"><h3>Review</h3></div>
+            <div class="desk-05 tab-08 cart-form-wrap">
+                <div class="row" id="cart-order">
+                    <div class="desk-02 tab-02 mob-08">
+                        <div id="md-cart-items-header">Bag</div>
+                    </div>
+                    <div class="desk-06 tab-06 mob-08">
+                        {{#each productsInBag}}
+                            <div class="row">
+                                <div class="desk-01 tab-01 mob-01 cart-product-img">
+                                    <a href="/product/{{id}}">
+                                        <img width="75" height="75" src="{{thumbSrc}}">
+                                    </a>
+                                </div>
+                                <div class="desk-07 tab-07 mob-07 cart-product-details">
+                                    <div class="row">
+                                        <div class="desk-05 tab-05 mob-05" id="md-cart-product-title">
+                                            <a class="bold" href="/product/{{id}}">{{name}}</a>
+                                        </div>
+                                        <div class="desk-02 tab-02 mob-02 text-small mt-10">Size: <strong>{{size.name}}</strong></div>
+                                        <div class="desk-01 tab-01 mob-01 slide-cart-line-remove item-remove mt-10"></div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="desk-05 tab-05 mob-05" id="md-cart-product-qty">
+                                            <div class="quantity">
+                                                <span>QTY </span>
+                                                <input type="number" step="1" min="0" max="{{size.inStock}}" value="{{quantity}}" title="Qty" size="2" class="input-text qty text">
+                                            </div>
+                                        </div>
+                                        <div class="desk-03 tab-03 mob-03" id="md-cart-product-price">{{size.price}}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        {{/each}}
+                    </div>
+                </div>
+                <div class="row" id="coupons-row">
+                    <div class="desk-02 tab-02 mob-08 calcuate-shipping-title">
+                        <div id="md-cart-coupons-header">Discount Code</div>
+                    </div>
+                    <div class="desk-03 tab-03 mob-08">
+                        <input type="text" name="coupon_code" class="input-text placeholder" id="coupon_code" value="" placeholder="Enter code">
+                        <input type="submit" class="button" name="apply_coupon" value="Apply">
+                    </div>
+                </div>
+                <div class="row" id="cart-breakdown">
+                    <div class="desk-02 tab-02 mob-08">
+                        <div id="md-cart-totals-header">Totals Breakdown</div>
+                    </div>
+                    <div class="desk-06 tab-06 mob-08">
+                        <div class="row">
+                            <div class="desk-04 tab-04 mob-04 totals-label" id="md-cart-subtotal-header">Cart Subtotal</div>
+                            <div class="desk-04 tab-04 mob-04 totals-value align-right" id="md-cart-subtotal-value">${{subtotal}}</div>
+                        </div>
+                        <div class="row" id="md-cart-tax-row">
+                            <div class="md-tax-left desk-04 tab-04 mob-04">Tax</div>
+                            <div class="md-tax-right desk-04 tab-04 mob-04 align-right">$0.00</div>
+                        </div>
+                        <div class="row" id="md-main-cart-shipping-row">
+                            <div class="desk-01 tab-01 mob-01 totals-label">Shipping</div>
+                            <div class="desk-07 tab-07 mob-07 totals-label">
+                                <ul id="shipping_method">
+                                    <li>
+                                        <input type="radio" name="shipping_method" id="shipping_method_0_uspsi_first_class" value="31.73" checked="checked" class="shipping_method">
+                                        <label for="shipping_method_0_uspsi_first_class">First Class Mail® International (US Postal Service): <span class="amount">$31.73</span></label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="shipping_method" id="shipping_method_0_uspsi_global_express" value="145.23" class="shipping_method">
+                                        <label for="shipping_method_0_uspsi_global_express">Global Express Guaranteed® (GXG) (US Postal Service): <span class="amount">$145.23</span></label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="shipping_method" id="shipping_method_0_uspsi_priority_mail" value="42.48" class="shipping_method">
+                                        <label for="shipping_method_0_uspsi_priority_mail">Priority Mail International® (US Postal Service): <span class="amount">$42.48</span></label>
+                                    </li>
+                                    <li>
+                                        <input type="radio" name="shipping_method" id="shipping_method_0_uspsi_express_mail" value="56.77" class="shipping_method">
+                                        <label for="shipping_method_0_uspsi_express_mail">Priority Mail Express International™ (US Postal Service): <span class="amount">$56.77</span></label>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="row" id="md-cart-total-row">
+                            <div class="desk-04 tab-04 mob-04 totals-label">Total</div>
+                            <div class="desk-04 tab-04 mob-04 totals-label align-right">${{total}}</div>
+                        </div>
+                        <div class="row mt-60">
+                            <div class="desk-04" id="slide-cart-hide-cart-button">
+                                <a id="continueShopping" class="slide-closer bag-close">Continue shopping</a>
+                            </div>
+                            <div class="desk-04 align-center" id="slide-cart-checkout-button">
+                                <a id="checkoutTotal" class="review-order">Checkout</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</template>

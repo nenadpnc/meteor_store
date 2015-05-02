@@ -1,0 +1,21 @@
+<template name="productIndex">
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="desk-02 tab-hide mob-hide">
+                    <div class="wrapper-sticky">
+                        <div class="sticky">
+                            <h2>Index</h2>
+                            <div class="remove-min-height">
+                                <a href="/product/{{currentProduct._id}}"><img src="{{currentProduct.thumbSrc}}"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="desk-06 tab-08 mob-08 index-table">
+                  {{> reactiveTable collection=products settings=settings}}
+                </div>
+            </div>
+        </div>
+    </section>
+</template>
